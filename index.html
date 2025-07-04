@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,8 +19,15 @@
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-    h1 {
+    .logo {
+      display: block;
+      margin: 0 auto 20px auto;
       text-align: center;
+    }
+    .logo img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
     }
     textarea, button {
       width: 100%;
@@ -41,7 +47,10 @@
 </head>
 <body>
   <div class="container">
-    <h1>Tripanick Translator</h1>
+    <a href="index.html" class="logo">
+      <img src="tripanicktranslatorlogo.jpg" alt="Tripanick Translator Logo">
+    </a>
+
     <textarea id="inputText" rows="5" placeholder="Enter English text to translate..."></textarea>
     <button id="translateButton">Translate</button>
     <div id="output" class="output">Translation will appear here</div>
@@ -163,7 +172,7 @@
 
       const phraseKeys = Object.keys(dictionary).sort((a, b) => b.split(" ").length - a.split(" ").length);
       phraseKeys.forEach(key => {
-        const regex = new RegExp(`\b${key}\b`, "gi");
+        const regex = new RegExp(`\\b${key}\\b`, "gi");
         translated = translated.replace(regex, dictionary[key]);
       });
 
