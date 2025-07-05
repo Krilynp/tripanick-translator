@@ -3,204 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tripanick Translator</title>
-
-  <!-- Open Graph Meta Tags for Facebook preview -->
-  <meta property="og:title" content="Tripanick Translator" />
-  <meta property="og:description" content="Translate English to Tripanick — A language of the people." />
-  <meta property="og:image" content="https://krilynp.github.io/tripanick-translator/tripanicktranslatorlogo.jpg" />
-  <meta property="og:url" content="https://krilynp.github.io/tripanick-translator/" />
-  <meta property="og:type" content="website" />
-
+  <title>Tripanick Translator Button</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: linear-gradient(to bottom, #d0eaff, #ffffff);
-      padding: 20px;
-      color: #333;
-    }
-    .container {
-      max-width: 800px;
-      margin: auto;
-      background: #fff;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    h1 {
+      background: linear-gradient(to bottom, #e0f2ff, #ffffff);
       text-align: center;
+      padding: 50px;
     }
-    textarea, button {
-      width: 100%;
-      font-size: 16px;
-      padding: 10px;
-      margin: 10px 0;
-      box-sizing: border-box;
-    }
-    .output {
-      background: #eee;
-      padding: 15px;
-      font-size: 18px;
-      border-radius: 4px;
-      white-space: pre-wrap;
-    }
-    .logo-link {
-      display: block;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    .logo-link img {
-      max-width: 200px;
+    a img {
+      max-width: 300px;
       height: auto;
       border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s ease;
+    }
+    a img:hover {
+      transform: scale(1.05);
     }
   </style>
 </head>
 <body>
 
-  <!-- Logo Button -->
-  <a href="https://krilynp.github.io/tripanick-translator/" class="logo-link">
-    <img src="tripanicktranslatorlogo.jpg" alt="Tripanick Translator Logo" />
+  <a href="https://krilynp.github.io/tripanick-translator/" target="_blank">
+    <img src="https://i.postimg.cc/brmCbZTT/tripanicktranslatorlogo.jpg" alt="Tripanick Translator" />
   </a>
 
-  <div class="container">
-    <h1>Tripanick Translator</h1>
-    <textarea id="inputText" rows="5" placeholder="Enter English text to translate..."></textarea>
-    <button id="translateButton">Translate</button>
-    <div id="output" class="output">Translation will appear here</div>
-  </div>
+  <p style="margin-top: 20px;">Click the logo to use the <strong>Tripanick Translator</strong></p>
 
-  <script>
-    const dictionary = {
-      "thank you spirit helper": "nia:wen ohseronni",
-      "how are you": "ka ia ken",
-      "i need help": "nitho wakayen",
-      "what is today": "nón:wa énska ién:re",
-      "thank you": "nia:wen",
-      "hello": "kweh",
-      "how": "ka",
-      "are": "ia",
-      "you": "ken",
-      "thank": "nia:wen",
-      "help": "wakayen",
-      "can": "ken",
-      "me": "ni",
-      "spirit": "ohseron",
-      "guide": "wase",
-      "family": "onkwanikonra",
-      "friend": "karitsi",
-      "peace": "skennen",
-      "language": "karihwanoron",
-      "walk": "yayonhets",
-      "run": "yoyanerats",
-      "see": "watkwanon",
-      "i": "nitho",
-      "need": "wakayen",
-      "love": "iontenhnhen",
-      "not": "yah",
-      "understand": "tewakwanon",
-      "come": "tesewatshen",
-      "here": "kanonhweraton",
-      "go": "tesewakeron",
-      "away": "kaionon",
-      "listen": "yahontahkwa",
-      "speak": "yakarihwis",
-      "learn": "yawenhnis",
-      "teach": "yakonhnis",
-      "ancestor": "rakwis",
-      "tribe": "onkwehonwe",
-      "honor": "kanikonriio",
-      "protection": "ratiksa",
-      "calling": "wahyatkwa",
-      "wisdom": "ronwatirihonni",
-      "journey": "yeyennarats",
-      "drum": "kahon:tsi",
-      "chant": "yakonhsa",
-      "path": "kaienkeha",
-      "circle": "kanekehne",
-      "light": "ateronhiate",
-      "darkness": "rakwen",
-      "life": "yakonikonhri",
-      "death": "ronanote",
-      "rebirth": "kawennion",
-      "blessing": "yakonwaraken",
-      "cleansing": "yakonaterats",
-      "song": "ondowa",
-      "fire": "tenkarha",
-      "water": "owi",
-      "earth": "kanahsot",
-      "wind": "hewako",
-      "moon": "ehstara",
-      "sun": "kahon:ta",
-      "sky": "karonta",
-      "eagle": "kahonra",
-      "good": "kakwen",
-      "bad": "tekakwen",
-      "strong": "rakwenhne",
-      "weak": "tewakwenhne",
-      "safe": "skennen",
-      "danger": "atewennine",
-      "now": "sate",
-      "soon": "kanon",
-      "later": "ronatka",
-      "day": "kanata",
-      "night": "rakwen",
-      "always": "enionkwa",
-      "never": "yahkwanon",
-      "eat": "yakwatenonhkwa",
-      "drink": "yakwateryen",
-      "sleep": "yakwatenonhsats",
-      "dream": "yakwatennahkwa",
-      "think": "yakwatatewennhkwa",
-      "what": "nón:wa",
-      "is": "énska",
-      "today": "ién:re",
-      "tomorrow": "ién:re’ne",
-      "yesterday": "ién:re’sere",
-      "where": "ka’nón:we",
-      "when": "ón:wa",
-      "who": "ónkwe",
-      "why": "oh nón:wa",
-      "because": "tsi nón:wa",
-      "with": "tsi ní:io",
-      "without": "yah tsi ní:io",
-      "it": "ne",
-      "the": "ne",
-      "a": "ne",
-      "an": "ne",
-      "please": "ónhka’ne",
-      "spirit helper": "ohseronni",
-      "sacred": "kanonhsakon",
-      "ceremony": "karihwa’será:ke",
-      "message": "kawennáhere",
-      "call": "wakonnhátye",
-      "answer": "wahónnyate",
-      "return": "tekatenonhkwa",
-      "open": "atakwenhnéhse",
-      "close": "kawennatáhkwa"
-    };
-
-    function translateText() {
-      const input = document.getElementById("inputText").value.toLowerCase().trim();
-      let translated = input;
-
-      const phraseKeys = Object.keys(dictionary).sort((a, b) => b.split(" ").length - a.split(" ").length);
-      phraseKeys.forEach(key => {
-        const regex = new RegExp(`\\b${key}\\b`, "gi");
-        translated = translated.replace(regex, dictionary[key]);
-      });
-
-      const outputWords = translated.split(" ").map(word => {
-        if (Object.values(dictionary).includes(word) || !/^[a-z']+$/.test(word)) {
-          return word;
-        }
-        return dictionary[word] || "[UNKNOWN]";
-      });
-
-      document.getElementById("output").innerText = outputWords.join(" ");
-    }
-
-    document.getElementById("translateButton").addEventListener("click", translateText);
-  </script>
 </body>
 </html>
