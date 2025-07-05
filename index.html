@@ -4,6 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tripanick Translator</title>
+
+  <!-- Open Graph Meta Tags for Facebook preview -->
+  <meta property="og:title" content="Tripanick Translator" />
+  <meta property="og:description" content="Translate English to Tripanick — A language of the people." />
+  <meta property="og:image" content="https://krilynp.github.io/tripanick-translator/tripanicktranslatorlogo.jpg" />
+  <meta property="og:url" content="https://krilynp.github.io/tripanick-translator/" />
+  <meta property="og:type" content="website" />
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -19,15 +27,8 @@
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-    .logo {
-      display: block;
-      margin: 0 auto 20px auto;
+    h1 {
       text-align: center;
-    }
-    .logo img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 8px;
     }
     textarea, button {
       width: 100%;
@@ -43,16 +44,27 @@
       border-radius: 4px;
       white-space: pre-wrap;
     }
+    .logo-link {
+      display: block;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .logo-link img {
+      max-width: 200px;
+      height: auto;
+      border-radius: 12px;
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <a href="https://krilynp.github.io/tripanick-translator/" target="_blank">
-  <img src="https://krilynp.github.io/tripanick-translator/tripanicktranslatorlogo.jpg" 
-       alt="Tripanick Translator Logo" 
-       style="max-width: 200px; display: block; margin: 0 auto;" />
-</a>
 
+  <!-- Logo Button -->
+  <a href="https://krilynp.github.io/tripanick-translator/" class="logo-link">
+    <img src="tripanicktranslatorlogo.jpg" alt="Tripanick Translator Logo" />
+  </a>
+
+  <div class="container">
+    <h1>Tripanick Translator</h1>
     <textarea id="inputText" rows="5" placeholder="Enter English text to translate..."></textarea>
     <button id="translateButton">Translate</button>
     <div id="output" class="output">Translation will appear here</div>
